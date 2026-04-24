@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LunexFlow — AI Systems for Business Automation</title>
-    <!-- Tailwind CSS Play CDN -->
+    <title>LunexFlow — Enterprise AI Systems</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/index.css" />
     <script>
@@ -12,282 +11,187 @@
         theme: {
           extend: {
             colors: {
-              brand: {
-                blue: '#3b82f6',
-                dark: '#0a0a0a',
-                slate: '#1e293b',
+              zinc: {
+                950: '#050505',
               }
-            },
-            fontFamily: {
-              sans: ['Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
             }
           }
         }
       }
     </script>
-    <style>
-      /* Technical Grid Background */
-      .technical-grid {
-        background-image: 
-          linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 40px 40px;
-      }
-      /* Glass Card Effect */
-      .glass-card {
-        background: rgba(15, 23, 42, 0.4);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .glass-card:hover {
-        border-color: rgba(59, 130, 246, 0.3);
-        background: rgba(15, 23, 42, 0.6);
-      }
-      html { scroll-behavior: smooth; }
-      .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .animate-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    </style>
   </head>
-  <body class="bg-brand-dark text-slate-200 antialiased overflow-x-hidden selection:bg-blue-500 selection:text-white font-sans">
+  <body class="bg-zinc-950 text-zinc-400">
     
-    <!-- Noise Overlay -->
-    <div class="noise-overlay"></div>
+    <div class="grid-bg"></div>
 
-    <!-- Background Decor -->
-    <div class="fixed inset-0 technical-grid pointer-events-none opacity-20"></div>
-    <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-    <div class="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none"></div>
-
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-brand-dark/80 backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 nav-blur border-b border-white/[0.05]">
+      <div class="container h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 bg-white rounded flex items-center justify-center">
+             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="3"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <span class="text-2xl font-black tracking-tighter text-white uppercase italic">LunexFlow</span>
+          <span class="text-white font-semibold tracking-tight text-xl">LUNEXFLOW</span>
         </div>
 
-        <div class="hidden md:flex items-center gap-8 uppercase tracking-widest text-[10px] font-black">
-          <a href="#systems" class="text-slate-400 hover:text-white transition-colors">Systems</a>
-          <a href="#workflow" class="text-slate-400 hover:text-white transition-colors">Workflow</a>
-          <a href="#erp" class="text-slate-400 hover:text-white transition-colors">ERP</a>
-          <a href="https://wa.me/94719329876" target="_blank" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-all flex items-center gap-2 uppercase tracking-tight shadow-lg shadow-blue-600/20">
-            Get Started <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-          </a>
-        </div>
+        <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
+          <a href="#solutions" class="hover:text-white transition-colors">Solutions</a>
+          <a href="#engineering" class="hover:text-white transition-colors">Engineering</a>
+          <a href="#impact" class="hover:text-white transition-colors">Impact</a>
+          <a href="https://wa.me/94719329876" class="btn-primary">Connect</a>
+        </nav>
 
-        <button id="menu-toggle" class="md:hidden text-white p-2">
-          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        <button id="menu-toggle" class="md:hidden text-white">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
+    </header>
 
-      <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-white/5 p-6 flex flex-col gap-4 uppercase font-black tracking-widest text-xs">
-        <a href="#systems" class="mobile-link text-slate-300">Systems</a>
-        <a href="#workflow" class="mobile-link text-slate-300">Workflow</a>
-        <a href="#erp" class="mobile-link text-slate-300">ERP</a>
-        <a href="https://wa.me/94719329876" target="_blank" class="w-full py-4 bg-blue-600 text-white rounded-xl text-center">Get Started</a>
+    <!-- Hero -->
+    <section class="pt-60 pb-32">
+      <div class="container text-center">
+        <div class="reveal inline-block px-4 py-1.5 rounded-full border border-white/[0.08] text-xs font-medium text-white mb-8">
+          The future of business is autonomous.
+        </div>
+        <h1 class="reveal text-5xl md:text-8xl font-semibold text-white tracking-tighter mb-8 leading-[1.05]">
+          Architecting <br />
+          <span class="text-zinc-600">Intelligent Ecosystems.</span>
+        </h1>
+        <p class="reveal text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-12">
+          LunexFlow designs high-performance AI agents and automated systems that transform operational complexity into competitive advantage.
+        </p>
+        <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://wa.me/94719329876" class="btn-primary w-full sm:w-auto">Start Consultation</a>
+          <a href="#solutions" class="btn-secondary w-full sm:w-auto">View Solutions</a>
+        </div>
       </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="relative pt-44 pb-32 px-6 overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="animate-on-scroll">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-500/5 text-blue-400 text-[10px] font-black uppercase tracking-[0.2em] mb-8">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-              </span>
-              AI-Powered Automation
-            </div>
-            
-            <h1 class="text-6xl md:text-8xl font-black text-white tracking-tighter mb-8 leading-[0.9] uppercase italic">
-              AI Systems <br />
-              <span class="gradient-text text-glow">
-                Simplified
-              </span>
-            </h1>
-            
-            <p class="text-xl text-slate-400 max-w-xl mb-12 leading-relaxed font-bold italic">
-              LunexFlow engineers intelligent agents and automated ecosystems that handle the heavy lifting, so you can focus on scaling.
-            </p>
+    <!-- Visual Anchor -->
+    <section class="pb-40 px-6 reveal">
+       <div class="container max-w-5xl">
+         <div class="relative rounded-2xl border border-white/[0.05] bg-zinc-900/50 p-3 overflow-hidden shadow-2xl">
+            <img src="./src/assets/dashboard.png" alt="LunexFlow Platform" class="w-full rounded-xl opacity-80 border border-white/[0.05]" />
+            <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent"></div>
+         </div>
+       </div>
+    </section>
 
-            <div class="flex flex-col sm:flex-row items-center gap-4 uppercase font-black text-[10px] tracking-widest">
-              <a href="https://wa.me/94719329876" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl transition-all flex items-center justify-center gap-2 group shadow-xl shadow-blue-600/20">
-                Get Started
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-              </a>
-              <a href="#systems" class="w-full sm:w-auto px-10 py-5 bg-white/5 hover:bg-white/10 text-white rounded-2xl transition-all border border-white/10 flex items-center justify-center">
-                Explore Tech
-              </a>
-            </div>
+    <!-- Solutions -->
+    <section id="solutions" class="py-32 border-t border-white/[0.05]">
+      <div class="container">
+        <div class="grid lg:grid-cols-3 gap-12">
+          <div class="reveal">
+            <h2 class="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">Solutions</h2>
+            <h3 class="text-3xl font-semibold text-white mb-8 leading-tight">Precision built for enterprise scale.</h3>
           </div>
-
-          <div class="relative animate-on-scroll delay-200">
-            <div class="absolute -inset-4 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl rounded-full"></div>
-            <div class="relative glass-card rounded-[40px] p-2 overflow-hidden shadow-2xl float-animation">
-              <img src="./src/assets/dashboard.png" alt="LunexFlow AI Dashboard" class="w-full rounded-[32px] shadow-2xl opacity-90 hover:opacity-100 transition-opacity" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+          <div class="lg:col-span-2 grid md:grid-cols-2 gap-8">
+            <div class="pro-card reveal">
+              <h4 class="text-lg font-semibold text-white mb-3">Custom ERP Systems</h4>
+              <p class="text-sm leading-relaxed">High-fidelity inventory and logistics management designed for high-throughput retail operations.</p>
+            </div>
+            <div class="pro-card reveal">
+              <h4 class="text-lg font-semibold text-white mb-3">AI Agent Pipelines</h4>
+              <p class="text-sm leading-relaxed">Autonomous agents that manage customer service, lead qualification, and document processing.</p>
+            </div>
+            <div class="pro-card reveal">
+              <h4 class="text-lg font-semibold text-white mb-3">Workflow Integration</h4>
+              <p class="text-sm leading-relaxed">Seamlessly connecting disconnected business tools into a single, automated source of truth.</p>
+            </div>
+            <div class="pro-card reveal">
+              <h4 class="text-lg font-semibold text-white mb-3">Business Intelligence</h4>
+              <p class="text-sm leading-relaxed">Predictive analytics engines that provide real-time visibility into operational performance.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Workflow Section -->
-    <section id="workflow" class="py-32 px-6 relative animate-on-scroll">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <div class="max-w-2xl">
-            <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 leading-tight uppercase italic">
-              From Idea to <br /> <span class="text-blue-500">Autonomous</span> Flow
-            </h2>
-            <p class="text-xl text-slate-400 font-bold italic">
-              We don't just build software; we engineer autonomous cycles that learn and adapt.
-            </p>
-          </div>
-          <div class="flex gap-4">
-             <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-500 font-black italic">01</div>
-             <div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-slate-500 font-black italic">02</div>
-             <div class="w-12 h-12 rounded-full border border-blue-500/50 bg-blue-500/10 flex items-center justify-center text-blue-500 font-black italic">03</div>
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all group">
-            <div class="w-14 h-14 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+    <!-- Engineering Philosophy -->
+    <section id="engineering" class="py-32 bg-zinc-900/30">
+      <div class="container">
+        <div class="max-w-3xl">
+          <h2 class="reveal text-4xl md:text-6xl font-semibold text-white tracking-tighter mb-12 leading-tight">
+            Engineering for <br /> <span class="text-zinc-600">Reliability and Performance.</span>
+          </h2>
+          <div class="grid gap-12">
+            <div class="reveal flex gap-8">
+              <div class="text-zinc-700 font-medium text-lg">01</div>
+              <div>
+                <h4 class="text-white font-semibold mb-2">Systems First Approach</h4>
+                <p class="text-sm">We don't build software in isolation. We engineer entire ecosystems that account for every touchpoint in your business.</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-black text-white mb-4 uppercase italic">Analyze</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed">Deep dive into your existing business bottlenecks and manual pain points.</p>
-          </div>
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-all group">
-            <div class="w-14 h-14 bg-indigo-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-500"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            <div class="reveal flex gap-8">
+              <div class="text-zinc-700 font-medium text-lg">02</div>
+              <div>
+                <h4 class="text-white font-semibold mb-2">AI-Core Infrastructure</h4>
+                <p class="text-sm">Intelligence is baked into the foundation, not added as a feature. Every LunexFlow system is designed to learn and optimize.</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-black text-white mb-4 uppercase italic">Architect</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed">Designing the neural pathways of your business using modern AI agents.</p>
-          </div>
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5 hover:border-purple-500/30 transition-all group">
-            <div class="w-14 h-14 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <div class="reveal flex gap-8">
+              <div class="text-zinc-700 font-medium text-lg">03</div>
+              <div>
+                <h4 class="text-white font-semibold mb-2">Scalable Architecture</h4>
+                <p class="text-sm">Built on modern, cloud-native stacks that grow as your volume increases, ensuring zero-latency performance at scale.</p>
+              </div>
             </div>
-            <h3 class="text-2xl font-black text-white mb-4 uppercase italic">Automate</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed">Deployment of self-sustaining systems that manage inventory, sales, and leads.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Systems Grid -->
-    <section id="systems" class="py-32 px-6 bg-slate-950/50 animate-on-scroll">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-24">
-          <h2 class="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4 uppercase italic">Core Engineering</h2>
-          <p class="text-slate-500 font-bold italic">The pillars of LunexFlow automation.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-12">
-          <div class="glass-card p-12 rounded-[40px] group">
-            <div class="mb-8 p-4 bg-blue-600/10 rounded-2xl inline-block group-hover:bg-blue-600/20 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-500"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5V19A9 3 0 0 0 21 19V5"></path><path d="M3 12A9 3 0 0 0 21 12"></path></svg>
-            </div>
-            <h3 class="text-3xl font-black text-white mb-4 uppercase italic">Custom ERP</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed mb-6">Inventory management systems built for high-speed retail and parts distribution.</p>
-            <ul class="text-xs font-black uppercase tracking-widest text-slate-600 flex flex-col gap-3">
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Multi-branch Sync</li>
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-blue-500 rounded-full"></span> Real-time Tracking</li>
-            </ul>
+    <!-- Impact -->
+    <section id="impact" class="py-32">
+      <div class="container">
+        <div class="grid md:grid-cols-4 gap-8 text-center border-y border-white/[0.05] py-20">
+          <div class="reveal">
+            <div class="text-3xl font-semibold text-white mb-1">90%</div>
+            <div class="text-[10px] uppercase tracking-widest text-zinc-600">Operational Efficiency</div>
           </div>
-          <div id="erp" class="glass-card p-12 rounded-[40px] group border-blue-500/20 bg-blue-950/10">
-            <div class="mb-8 p-4 bg-indigo-600/10 rounded-2xl inline-block group-hover:bg-indigo-600/20 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-indigo-500"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-            </div>
-            <h3 class="text-3xl font-black text-white mb-4 uppercase italic">AI Agents</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed mb-6">Smart agents that handle customer queries, order processing, and lead generation.</p>
-            <ul class="text-xs font-black uppercase tracking-widest text-slate-600 flex flex-col gap-3">
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-indigo-500 rounded-full"></span> NLP Pipelines</li>
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-indigo-500 rounded-full"></span> Automated CRM</li>
-            </ul>
+          <div class="reveal">
+            <div class="text-3xl font-semibold text-white mb-1">2.5x</div>
+            <div class="text-[10px] uppercase tracking-widest text-zinc-600">Growth Velocity</div>
           </div>
-          <div class="glass-card p-12 rounded-[40px] group">
-            <div class="mb-8 p-4 bg-purple-600/10 rounded-2xl inline-block group-hover:bg-purple-600/20 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-500"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="text-3xl font-black text-white mb-4 uppercase italic">Data Core</h3>
-            <p class="text-slate-500 font-bold italic leading-relaxed mb-6">Business intelligence engines that turn raw data into actionable growth strategies.</p>
-            <ul class="text-xs font-black uppercase tracking-widest text-slate-600 flex flex-col gap-3">
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-purple-500 rounded-full"></span> Predict Analytics</li>
-              <li class="flex items-center gap-2"><span class="w-1 h-1 bg-purple-500 rounded-full"></span> Scalable DB</li>
-            </ul>
+          <div class="reveal">
+            <div class="text-3xl font-semibold text-white mb-1">0ms</div>
+            <div class="text-[10px] uppercase tracking-widest text-zinc-600">System Latency</div>
+          </div>
+          <div class="reveal">
+            <div class="text-3xl font-semibold text-white mb-1">24/7</div>
+            <div class="text-[10px] uppercase tracking-widest text-zinc-600">Autonomous Core</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Results Section -->
-    <section class="py-32 px-6 animate-on-scroll">
-      <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-5xl md:text-7xl font-black text-white tracking-tighter mb-20 uppercase italic">Built for <span class="text-blue-600">Impact</span></h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5">
-            <div class="text-4xl font-black text-white mb-2 italic">90%</div>
-            <p class="text-[10px] uppercase tracking-widest text-slate-500 font-black">Manual Reduction</p>
-          </div>
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5">
-            <div class="text-4xl font-black text-white mb-2 italic">2.5x</div>
-            <p class="text-[10px] uppercase tracking-widest text-slate-500 font-black">Faster Fulfillment</p>
-          </div>
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5">
-            <div class="text-4xl font-black text-white mb-2 italic">24/7</div>
-            <p class="text-[10px] uppercase tracking-widest text-slate-500 font-black">Active Monitoring</p>
-          </div>
-          <div class="p-8 rounded-3xl bg-white/5 border border-white/5">
-            <div class="text-4xl font-black text-white mb-2 italic">0ms</div>
-            <li class="list-none text-[10px] uppercase tracking-widest text-slate-500 font-black">Latency Core</li>
-          </div>
+    <!-- Final CTA -->
+    <section class="py-40">
+      <div class="container text-center">
+        <h2 class="reveal text-4xl md:text-6xl font-semibold text-white tracking-tighter mb-12">
+          Ready to automate?
+        </h2>
+        <div class="reveal">
+          <a href="https://wa.me/94719329876" class="btn-primary px-12 py-4 text-lg">Consult with an Engineer</a>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-32 px-6 relative overflow-hidden animate-on-scroll">
-      <div class="absolute inset-0 bg-blue-600"></div>
-      <div class="absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-900 opacity-50"></div>
-      <div class="relative max-w-5xl mx-auto text-center">
-        <h2 class="text-5xl md:text-8xl font-black text-white mb-12 tracking-tighter uppercase italic leading-[0.8]">Ready to <br /> Scale?</h2>
-        <p class="text-blue-100 text-xl font-bold italic mb-16 max-w-2xl mx-auto">Stop managing tasks. Start managing systems. Join the LunexFlow ecosystem today.</p>
-        <a href="https://wa.me/94719329876" target="_blank" class="inline-flex items-center gap-4 px-16 py-8 bg-brand-dark text-white rounded-[32px] font-black uppercase tracking-[0.2em] italic hover:scale-105 transition-transform shadow-2xl group">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:text-blue-500 transition-colors"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"></path></svg>
-          Launch Now
-        </a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 px-6 border-t border-white/5 font-sans relative">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
-        <div class="flex items-center gap-2">
-          <div class="w-6 h-6 bg-blue-600 rounded flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+    <footer class="py-20 border-t border-white/[0.05]">
+      <div class="container flex flex-col md:flex-row justify-between items-center gap-10">
+        <div class="flex items-center gap-3">
+          <div class="w-5 h-5 bg-zinc-800 rounded flex items-center justify-center">
+             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           </div>
-          <span class="text-xl font-black tracking-tighter text-white uppercase italic">LunexFlow</span>
+          <span class="text-white font-semibold tracking-tight text-sm uppercase">LUNEXFLOW</span>
         </div>
-        <div class="flex gap-8 font-black uppercase italic text-[10px] tracking-widest text-slate-500">
-           <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61562920861003" class="hover:text-blue-500 transition-colors">Facebook</a>
-           <a href="https://www.instagram.com/lunexflowai/" class="hover:text-blue-500 transition-colors">Instagram</a>
-           <a href="https://www.youtube.com/@lunexflowai" class="hover:text-blue-500 transition-colors">Youtube</a>
+        <div class="flex gap-8 text-[10px] uppercase tracking-widest font-medium">
+          <a href="#" class="hover:text-white">Facebook</a>
+          <a href="#" class="hover:text-white">Instagram</a>
+          <a href="#" class="hover:text-white">Youtube</a>
         </div>
-        <div class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-700">© 2026 LUNEXFLOW • SRI LANKA</div>
+        <div class="text-[10px] uppercase tracking-widest text-zinc-700">© 2026 LUNEXFLOW • SRI LANKA</div>
       </div>
     </footer>
 
