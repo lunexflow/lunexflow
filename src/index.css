@@ -3,12 +3,29 @@
   --color-brand-blue: #3b82f6;
   --color-brand-dark: #0a0a0a;
   --color-brand-slate: #1e293b;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: var(--color-brand-dark);
+  font-family: var(--font-main);
+  color: #e2e8f0;
+}
+
+/* Noise Texture Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 9999;
+  filter: contrast(150%) brightness(1000%);
 }
 
 /* Technical Grid */
@@ -21,24 +38,44 @@ body {
 
 /* Glass Card */
 .glass-card {
-  background-color: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .glass-card:hover {
-  border-color: rgba(59, 130, 246, 0.3);
-  background-color: rgba(15, 23, 42, 0.6);
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(15, 23, 42, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
   background: var(--color-brand-dark);
@@ -46,19 +83,19 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #1e293b;
   border-radius: 10px;
+  border: 2px solid var(--color-brand-dark);
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #3b82f6;
 }
 
-/* Animations Handled via main.js */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+/* Typography Enhancements */
+.text-glow {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
 }
 
-.animate-visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

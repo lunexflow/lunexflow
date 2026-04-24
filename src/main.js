@@ -18,14 +18,17 @@ mobileLinks.forEach(link => {
 
 // Reveal Animations on Scroll
 const observerOptions = {
-    threshold: 0.1,
+    threshold: 0.15,
     rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate-visible');
+            // Add a small delay for staggered effect if multiple elements appear at once
+            setTimeout(() => {
+                entry.target.classList.add('animate-visible');
+            }, index * 100);
             observer.unobserve(entry.target);
         }
     });
@@ -33,4 +36,14 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.animate-on-scroll').forEach(el => {
     observer.observe(el);
+});
+
+// Smooth Scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
